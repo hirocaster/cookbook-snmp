@@ -92,7 +92,7 @@ these following attributes to best suit your own environment.
 * `snmp['snmpd']['snmpd_run']`
   - snmpd control (default of "yes" means start daemon)
 
-* `snmp]['snmpd']['snmpd_opts']`
+* `snmp['snmpd']['snmpd_opts']`
   - snmpd options
 
 * `snmp['process_monitoring']['proc']`

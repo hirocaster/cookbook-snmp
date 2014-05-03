@@ -6,6 +6,9 @@
 #   An example configuration file for configuring the ucd-snmp snmpd agent.
 #
 ###############################################################################
+#
+
+agentAddress udp:161,udp6:161
 
 ###############################################################################
 # Access Control
@@ -16,6 +19,7 @@
 
 #       sec.name  source          community
 com2sec notConfigUser  default       <%= node['snmp']['community'] %>
+com2sec6 notConfigUser  default       <%= node['snmp']['community'] %>
 
 ####
 # Second, map the security name into a group name:

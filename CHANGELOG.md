@@ -1,6 +1,24 @@
 snmp cookbook CHANGELOG
 =======================
 
+v3.0.0
+------
+
+  @atomic-penguin
+  * Update build files, and rubocopped.
+
+  @jhmartin
+  * removed fqdn fron template.
+
+  @CBeerta
+  * Added `sources` and `sources6` attributes.
+  * Added ipv6 listener.
+
+Breaking changes:
+
+  @glensc
+  * Change `load_average` from Array of Hashes, to Hash #27
+
 v2.0.0
 ------
 

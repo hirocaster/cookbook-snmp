@@ -37,7 +37,7 @@ task :erbcheck do
 end
 
 # default tasks are quick, commit tests
-task :default => ['foodcritic', 'rubocop', 'chefspec', 'erbcheck']
+task default: %w(foodcritic rubocop chefspec erbcheck)
 
 # jenkins tasks, use checkformat for tracking results
-task :jenkins => ['foodcritic', 'rubocop', 'chefspec', 'erbcheck']
+task jenkins: %w(foodcritic rubocop chefspec erbcheck)

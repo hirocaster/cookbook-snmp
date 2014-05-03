@@ -18,14 +18,14 @@ agentAddress udp:161<% if node.key?('ip6address') -%>,udp6:161<% end -%>
 # First, map the community string into a "security name"
 
 #       sec.name  source          community
-<% node['snmp']['sources'].each do |source| -%>
-com2sec notConfigUser  <%= source %>  <%= node['snmp']['community'] -%>
+<% node['snmp']['sources'].each do |source| %>
+com2sec notConfigUser  <%= source %>  <%= node['snmp']['community'] %>
 <% end %>
-<% if node.key?('ip6address') -%>
+<% if node.key?('ip6address') %>
   <% node['snmp']['sources6'].each do |source6| %>
 com2sec6 notConfigUser  <%= source6 %>  <%= node['snmp']['community'] %>
   <% end %>
-<% end -%>
+<% end %>
 
 ####
 # Second, map the security name into a group name:
@@ -93,7 +93,7 @@ proc <%= proc_entry %>
 <% unless node['snmp']['process_monitoring']['procfix'].empty? %>
   <% node['snmp']['process_monitoring']['procfix'].each do |procfix_entry| %>
 procfix <%= procfix_entry %>
-  <% end -%>
+  <% end %>
 <% end %>
 
 # Disk Checks

@@ -16,6 +16,5 @@ suites:
 - name: default
   run_list:
   - recipe[snmp]
-  - recipe[snmp::extendbind]
   - recipe[snmp::snmptrapd]
   attributes: {}

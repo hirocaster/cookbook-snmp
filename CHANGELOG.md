@@ -1,6 +1,11 @@
 snmp cookbook CHANGELOG
 =======================
 
+v3.0.1
+------
+
+  * Missing newline in template, issue #28 reported by @indigo423
+
 v3.0.0
 ------
 

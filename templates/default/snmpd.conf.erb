@@ -18,9 +18,13 @@ agentAddress udp:161<% if node.key?('ip6address') -%>,udp6:161<% end -%>
 # First, map the community string into a "security name"
 
 #       sec.name  source          community
-com2sec notConfigUser  default       <%= node['snmp']['community'] %>
+<% node['snmp']['sources'].each do |source| -%>
+com2sec notConfigUser  <%= source %>  <%= node['snmp']['community'] -%>
+<% end %>
 <% if node.key?('ip6address') -%>
-com2sec6 notConfigUser  default      <%= node['snmp']['community'] %>
+  <% node['snmp']['sources6'].each do |source6| %>
+com2sec6 notConfigUser  <%= source6 %>  <%= node['snmp']['community'] %>
+  <% end %>
 <% end -%>
 
 ####

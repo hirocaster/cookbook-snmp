@@ -1,5 +1,6 @@
 ---
-driver_plugin: vagrant
+driver:
+  name: vagrant
 
 platforms:
 - name: ubuntu-12.04
@@ -8,7 +9,7 @@ platforms:
 - name: ubuntu-10.04
   run_list:
   - recipe[apt]
-- name: centos-6.4
+- name: centos-6.5
 - name: centos-5.10
 
 suites:

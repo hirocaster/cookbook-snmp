@@ -8,7 +8,7 @@
 ###############################################################################
 #
 
-agentAddress udp:161,udp6:161
+agentAddress udp:161<% if node.key?('ip6address') -%>,udp6:161<% end -%>
 
 ###############################################################################
 # Access Control
@@ -19,7 +19,9 @@ agentAddress udp:161,udp6:161
 
 #       sec.name  source          community
 com2sec notConfigUser  default       <%= node['snmp']['community'] %>
-com2sec6 notConfigUser  default       <%= node['snmp']['community'] %>
+<% if node.key?('ip6address') -%>
+com2sec6 notConfigUser  default      <%= node['snmp']['community'] %>
+<% end -%>
 
 ####
 # Second, map the security name into a group name:

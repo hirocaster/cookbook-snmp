@@ -16,12 +16,6 @@ task :rubocop do
   sh 'rubocop'
 end
 
-# rubocop jenkins rake task
-desc 'Ruby style guide - checkformat output'
-task :rubocop_checkformat do
-  sh 'rubocop --require rubocop/formatter/checkstyle_formatter --format Rubocop::Formatter::CheckstyleFormatter > checkstyle.xml'
-end
-
 # test-kitchen task
 begin
   require 'kitchen/rake_tasks'
@@ -46,4 +40,4 @@ end
 task :default => ['foodcritic', 'rubocop', 'chefspec', 'erbcheck']
 
 # jenkins tasks, use checkformat for tracking results
-task :jenkins => ['foodcritic', 'rubocop_checkformat', 'chefspec', 'erbcheck']
+task :jenkins => ['foodcritic', 'rubocop', 'chefspec', 'erbcheck']

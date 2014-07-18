@@ -152,7 +152,7 @@ You can apply these override attributes in a role, or node context.
     "community" => "secret",
     "full_systemview" => true,
     "disks" => [{:mount => "/", :min => "10%"}],
-    "load_average" => [{:max1 => "12", :max5 => "18"}],
+    "load_average" => {:max1 => "24", :max5 => "12", :max15 => "6" },
     "trapsinks" => [ "zenoss.example.com", "nagios.example.com" ],
     "syslocationPhysical" => "Server Room",
     "syslocationVirtual" => "Cloud - Virtual Pool",

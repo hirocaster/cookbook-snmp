@@ -39,9 +39,9 @@ describe 'snmp::default' do
     end
   end
 
-  context 'on SUSE 11.03' do
+  context 'on SUSE 11.3' do
     let(:chef_run) do
-      ChefSpec::Runner.new(platform: 'suse', version: 11.03).converge(described_recipe)
+      ChefSpec::Runner.new(platform: 'suse', version: 11.3).converge(described_recipe)
     end
 
     it 'installs net-snmp' do

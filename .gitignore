@@ -6,3 +6,6 @@ metadata.json
 *.swp
 checkstyle.xml
 Vagrantfile
+
+#IDE
+.idea

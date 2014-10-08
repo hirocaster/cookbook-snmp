@@ -1,6 +1,12 @@
 snmp cookbook CHANGELOG
 =======================
 
+v4.0.0
+------
+
+  * Allow multiple sources and groups
+  * Move to Berkshelf 3
+
 v3.0.1
 ------
 

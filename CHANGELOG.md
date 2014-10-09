@@ -6,6 +6,7 @@ v4.0.0
 
   * Allow multiple sources and groups
   * Added sysName to System contact information section
+  * snmpd.conf should only be readable to root
   * Move to Berkshelf 3
 
 v3.0.1

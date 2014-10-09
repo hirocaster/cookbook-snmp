@@ -38,7 +38,7 @@ node['snmp']['groups']['v2c'].each_key { |key| groupnames << key }
 groupnames = groupnames.uniq
 
 template '/etc/snmp/snmpd.conf' do
-  mode 0644
+  mode 0600
   owner 'root'
   group 'root'
   variables(:groups => groupnames)

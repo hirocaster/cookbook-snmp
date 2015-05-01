@@ -32,9 +32,15 @@ service node['snmp']['service'] do
   action [:start, :enable]
 end
 
+groupnames = []
+node['snmp']['groups']['v1'].each_key { |key| groupnames << key }
+node['snmp']['groups']['v2c'].each_key { |key| groupnames << key }
+groupnames = groupnames.uniq
+
 template '/etc/snmp/snmpd.conf' do
-  mode 0644
+  mode 00600
   owner 'root'
   group 'root'
+  variables(groups: groupnames)
   notifies :restart, "service[#{node['snmp']['service']}]"
 end

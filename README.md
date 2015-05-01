@@ -27,11 +27,25 @@ these following attributes to best suit your own environment.
 * `snmp['community']`
   - SNMP Community String, default is "public".
 
-* `snmp['sources']`
-  - Array of Source IPv4 or Networks to allow Access from 
+* `snmp['sec_name']`
+  - Hash of security name and IPv4 networks to allow access.  See `man 5 snmpd.conf`,
+    section VACM Configuration for further details.
+  - Default { notConfigUser: ['default'] }
 
-* `snmp['sources6']`
-  - Array of Source IPv6 or Networks to allow Access from 
+* `snmp['sec_name6']`
+  - Hash of security name and IPv6 networks to allow access.  See `man 5 snmpd.conf`,
+    section VACM Configuration for further details.
+  - Default { notConfigUser: ['default'] }
+
+* `snmp['groups']['v1']`
+  - Hash of security groups to map security names into for SNMPv1.  See `man 5 snmpd.conf`,
+    section VACM Configuration for further details.
+  - Default { notConfigGroup: ['notConfigUser'] }
+
+* `snmp['groups']['v2c']`
+  - Hash of security groups to map security names into for SNMPv2c.  See `man 5 snmpd.conf`,
+    section VACM Configuration for further details.
+  - Default { notConfigGroup: ['notConfigUser'] }
 
 * `snmp['trapcommunity']`
   - SNMP Community Trap String, default is "public".

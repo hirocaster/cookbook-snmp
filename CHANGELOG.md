@@ -1,6 +1,18 @@
 snmp cookbook CHANGELOG
 =======================
 
+v4.0.0
+------
+
+  *BREAKING CHANGE*
+  * Allow multiple sources and groups
+    - Deprecate sources & sources6 keys
+    - Added sec_name, sec_name6, groups['v1'], groups['v2c'] keys.
+
+  * Added sysName to System contact information section
+  * snmpd.conf should only be readable to root
+  * Update various build files 
+
 v3.0.1
 ------
 

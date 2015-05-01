@@ -13,7 +13,7 @@ end
 # rubocop rake task
 desc 'Ruby style guide linter'
 task :rubocop do
-  sh 'rubocop'
+  sh 'rubocop --fail-level W'
 end
 
 # test-kitchen task
@@ -38,6 +38,3 @@ end
 
 # default tasks are quick, commit tests
 task default: %w(foodcritic rubocop chefspec erbcheck)
-
-# jenkins tasks, use checkformat for tracking results
-task jenkins: %w(foodcritic rubocop chefspec erbcheck)

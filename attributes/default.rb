@@ -33,10 +33,10 @@ end
 default['snmp']['service'] = 'snmpd'
 
 default['snmp']['community'] = 'public'
-default['snmp']['sec_name'] = {"notConfigUser" => %w(default)}
-default['snmp']['sec_name6'] = {"notConfigUser" => %w(default)}
-default['snmp']['groups']['v1'] = {"notConfigGroup" => %w(notConfigUser)}
-default['snmp']['groups']['v2c'] = {"notConfigGroup" => %w(notConfigUser)}
+default['snmp']['sec_name'] = { 'notConfigUser' => %w(default) }
+default['snmp']['sec_name6'] = { 'notConfigUser' => %w(default) }
+default['snmp']['groups']['v1'] = { 'notConfigGroup' => %w(notConfigUser) }
+default['snmp']['groups']['v2c'] = { 'notConfigGroup' => %w(notConfigUser) }
 default['snmp']['syslocationVirtual'] = 'Virtual Server'
 default['snmp']['syslocationPhysical'] = 'Server Room'
 default['snmp']['syscontact'] = 'Root <root@localhost>'

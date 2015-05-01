@@ -41,6 +41,6 @@ template '/etc/snmp/snmpd.conf' do
   mode 0600
   owner 'root'
   group 'root'
-  variables(:groups => groupnames)
+  variables(groups: groupnames)
   notifies :restart, "service[#{node['snmp']['service']}]"
 end

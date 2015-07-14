@@ -30,6 +30,7 @@ end
 
 service node['snmp']['service'] do
   action [:start, :enable]
+  supports { :restart => true, :reload => true, :status => true }
 end
 
 groupnames = []
